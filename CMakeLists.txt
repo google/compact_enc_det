@@ -4,6 +4,7 @@
 
 # Old enough to support Ubuntu Precise.
 cmake_minimum_required(VERSION 2.8.7)
+set(PROJECT_VERSION 1.0)
 
 if (WIN32)
   if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/compact_enc_det/compact_enc_det.h")
