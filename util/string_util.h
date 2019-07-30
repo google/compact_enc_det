@@ -41,7 +41,13 @@ inline int strncasecmp(const char* s1, const char* s2, size_t n) {
 #endif
 }
 
-#if !defined(__linux__)
+#ifndef HAVE_MEMRCHR
+#if defined(__GLIBC__) && ((__GLIBC__ > 2) || ((__GLIBC__ == 2) && (__GLIBC_MINOR__ >= 2)))
+#define HAVE_MEMRCHR
+#endif
+#endif
+
+#ifndef HAVE_MEMRCHR
 inline void* memrchr(const void* s, int c, size_t n) {
   const unsigned char* p = (const unsigned char*) s;
   for (p += n; n > 0; n--) {
