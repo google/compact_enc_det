@@ -58,8 +58,6 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-include_directories(${CMAKE_SOURCE_DIR})
-
 set(CED_LIBRARY_SOURCES
     compact_enc_det/compact_enc_det.cc
     compact_enc_det/compact_enc_det_hint_code.cc
@@ -68,6 +66,8 @@ set(CED_LIBRARY_SOURCES
     )
 
 add_library(ced ${CED_LIBRARY_SOURCES})
+
+target_include_directories(ced PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Uncomment to put CED into WHATWG-compliant mode.
 #add_definitions(-DHTML5_MODE)
