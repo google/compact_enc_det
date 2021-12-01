@@ -51,10 +51,10 @@ if test ! -e gtest; then
   fi
 
   echo "Google Test not present.  Fetching from the web..."
-  curl $curlopts -L -O https://github.com/google/googletest/archive/master.zip
-  unzip -q master.zip
-  rm master.zip
-  mv googletest-master gtest
+  curl $curlopts -L -o main.zip https://codeload.github.com/google/googletest/zip/refs/heads/main
+  unzip -q main.zip
+  rm main.zip
+  mv googletest-main gtest
 fi
 
 if test -z $(which cmake); then
