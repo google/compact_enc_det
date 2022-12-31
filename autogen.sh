@@ -21,6 +21,7 @@
 # are automatically generated.
 
 set -e
+gtest_release='release-1.12.1'
 
 if [ ! -z "$@" ]; then
   for argument in "$@"; do
@@ -51,10 +52,10 @@ if test ! -e gtest; then
   fi
 
   echo "Google Test not present.  Fetching from the web..."
-  curl $curlopts -L -o main.zip https://codeload.github.com/google/googletest/zip/refs/heads/main
+  curl $curlopts -L -o main.zip https://codeload.github.com/google/googletest/zip/$gtest_release
   unzip -q main.zip
   rm main.zip
-  mv googletest-main gtest
+  mv googletest-$gtest_release gtest
 fi
 
 if test -z $(which cmake); then
