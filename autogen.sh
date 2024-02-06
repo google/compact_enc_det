@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 #
 # Copyright 2016 Google Inc.
 #
