@@ -44,3 +44,10 @@ project files for Visual Studio.
 ```
 D:\packages\compact_enc_det> cmake .
 ```
+
+### 3rd party bindings for other languages
+
+- **[sonicdoe/ced](https://github.com/sonicdoe/ced)** Node.js module
+- **[cloudaper/compact_enc_det](https://github.com/cloudaper/compact_enc_det)** Ruby gem
+
+Have you created bindings for another language? Open a PR and add it to the list!
